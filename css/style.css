@@ -372,3 +372,10 @@ header{
         border: 1px solid white;
      }
     }
+
+    #header-catch-text a,
+    #header-catch-text a:hover,
+    #header-catch-text a:visited{
+        text-decoration: none;
+        color: #ff69b4;
+    }
