@@ -77,7 +77,7 @@ main #main-latestwork-title {
     padding: var(--padding-default);
 }
 main #main-latestwork-title button {
-    background-color: var(--primary-bg);
+    background-color: var(--tertiary-color);
     border: 1px solid white;
     color: var(--primary-color);
 }
