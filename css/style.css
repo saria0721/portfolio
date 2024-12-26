@@ -1,6 +1,6 @@
 /* CSS 変数定義 */
 :root {
-    --primary-bg: #28293E;
+    --primary-bg: #1a1d29;
     --secondary-bg: #fff9ff;
     --primary-color: white;
     --secondary-color: #391400;
@@ -23,19 +23,19 @@ button {
 }
 .txt-small-catch {
     color: var( --tertiary-color);
-    margin-bottom: 24px;
+    margin-bottom: 26px;
 
 }
 .txt-title {
-    font-size: 24px;
+    font-size: 26px;
     font-weight:900;
     margin-bottom: 15px;
 }
 .txt-catch {
-    font-size: 24px;
+    font-size: 22px;
 }
 p {
-    font-size: 16px;
+    font-size: 20px;
 }
 
 /* header */
