@@ -1,11 +1,13 @@
 /* CSS 変数定義 */
 :root {
     --primary-bg: #28293E;
-    --secondary-bg: #FDF0E9;
+    --secondary-bg: #fff9ff;
     --primary-color: white;
     --secondary-color: #391400;
     --padding-default: 24px;
     --padding-narrow: 12px;
+    --padding-footer: 24px;
+    --tertiary-color: #ff69b4;
 }
 /* body リセット */
 body {
@@ -13,6 +15,27 @@ body {
 }
 img {
     width: 100%;
+}
+button {
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-weight: bolder;
+}
+.txt-small-catch {
+    color: var( --tertiary-color);
+    margin-bottom: 24px;
+
+}
+.txt-title {
+    font-size: 24px;
+    font-weight:900;
+    margin-bottom: 15px;
+}
+.txt-catch {
+    font-size: 24px;
+}
+p {
+    font-size: 16px;
 }
 
 /* header */
@@ -22,22 +45,46 @@ header {
     padding: var(--padding-default);
 }
 #logo {
-    width: 195px;
+    width: 100px;
+    line-height: 200%;
+}
+#header-catch-text p {
+    line-height: 200%;
+}
+#header-catch-text button {
+    background-color: var(--tertiary-color);
+    color: var(--primary-color);
 }
 
 /* main */
 
+main {
+
+}
 main #main-about {
     color: var(--secondary-color);
     background-color: var(--secondary-bg);
     padding: var(--padding-default);
 }
+main #main-about button {
+    color: var(--secondary-color);
+}
 main #main-latestwork {
-    color: var(--primary-color);
+    color: white;
     background-color: var(--primary-bg);
+}
+main #main-latestwork-title {
     padding: var(--padding-default);
 }
+main #main-latestwork-title button {
+    background-color: var(--primary-bg);
+    border: 1px solid white;
+    color: var(--primary-color);
+}
 
+main #main-latestwork-images {
+    padding: var(--padding-narrow);
+}
 main #main-images {
     display: flex;
     flex-wrap: wrap;
@@ -46,15 +93,38 @@ main #main-images img{
     width: 50%;
 }
 
+/* work-card */
+.main-latestwork {
+    position: relative;
+}
+.work-genre, .work-title {
+    position: absolute;
+}
+.work-genre {
+    bottom: 80px;
+    left: 12px;
+    background-color: #ff69b4;
+    color: white;
+    font-size: 19px;
+    padding: 4px 30px;
+    border-radius: 28px;
+}
+.work-title {
+    bottom: 24px;
+    left: 12px;
+    font-weight: bold;
+    font-size: 35px;
+}
+
+
 /* footer */
 footer {
-    padding-top: 40px;
     color: var(--primary-color);
     background-color: var(--primary-bg);
+    padding-top: 40px;
     font-size: 12px;
     padding-left: var(--padding-footer);
     padding-right: var(--padding-footer);
-    --padding-footer: 16px;
 }
 footer hr {
     border-color: rgba(255,255,255,0.2);
@@ -69,13 +139,39 @@ footer hr {
     margin: 36px;
 }
 .footer-menu-title {
-    color: var(--teritiary-color);
+    color: var(--tertiary-color);
     margin-bottom: 24px;
-    --tertiary-color: #cccccc;
-
 }
 .footer-menu-item {
     margin-bottom: 8px;
+}
+.footer-menu ul {
+    padding-left: 0px;
+}
+.footer-menu-item li {
+    margin-bottom: 6px;
+    list-style: none;
+}
+#footer-sns {
+    margin-bottom: 24px;
+}
+#footer-sns li {
+    list-style: none;
+}
+#footer-sns ul {
+    display: flex;
+    justify-content:center;
+    padding-left: 0px;
+}
+#footer-sns i {
+    font-size: 150%;
+    background-color: var(--tertiary-color);
+    padding: 12px;
+    padding-top:16px;
+    width: 24px;
+    height: 24px;
+    border-radius: 24px;
+    margin: 4px;
 }
 #footer-sns {
     margin-bottom: 24px;
@@ -90,28 +186,6 @@ footer hr {
     text-align: center;
     font-size: 9px;
     padding-bottom: var(--padding-narrow);
-}
-
-/* work-card */
-.main-latestwork {
-    position: relative;
-    }
-.work-genre,.work-title {
-    position:absolute;
-}
-.work-genre {
-    bottom: 60px;
-    left: 12px;
-    background-color: white;
-    color: var(--secondary-color);
-    font-size: 12px;
-    padding: 4px 24px;
-    border-radius: 24px;
-}
-.work-title {
-    bottom: 24px;
-    left: 12px;
-    font-weight: bold;
 }
 
 @media(min-width: 768px){
@@ -140,14 +214,13 @@ footer hr {
     }
     main #main-images{
         flex-wrap: nowrap;
-        justify-content: space-between
+        justify-content: center;
+        background-color: var(--primary-bg);
     }
     main #main-images img{
         width: 16%;
+        min-width: 100px;
     }
-}
-
-@media(min-width: 768px){
     #footer-main, #footer-menus {
         display: flex;
         justify-content: space-between;
@@ -257,10 +330,45 @@ header{
   /* アイコンがクリックされたらメニューを表示 */
   #drawer_input:checked ~ .nav_content {
     left: 0;/* メニューを画面に入れる */
-  }
+}
 
   @media(min-width: 768px){
     #menubar-mobile{
         display: none;
     }
 }
+
+#menubar #menu, #menubar #contact {
+    display: none;
+
+}
+@media(min-width: 768px){
+     #menubar #menu, #menubar #contact {
+        display: block;
+     }
+     #menubar {
+        display: flex;
+        justify-content: space-between;
+     }
+     #menubar #menu {
+        display: flex;
+     }
+     #menubar ul {
+        display: flex;
+     }
+     #menubar li {
+        list-style: none;
+        margin-right: 10px;
+     }
+     #menubar a {
+        text-decoration: none;
+     }
+     #menubar li a,#menubar li a:hover {
+        color: var(--primary-color);
+     }
+     #menubar button {
+        background-color: var(--primary-bg);
+        color: var(--primary-color);
+        border: 1px solid white;
+     }
+    }
